@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.card {
+  border-radius: 9px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.card.discount {
+  background-color: #fbe5e6;
+}
+
+.card.no-discount {
+  background-color: #fcede0;
+}
+
+.card:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  margin: 16px 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 9px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.btn.discount {
+  background-color: #e0494d;
+  border: 3px solid #e0494d;
+}
+
+.btn.no-discount {
+  background-color: #e67e22;
+  border: 3px solid #e67e22;
+}
+
+.btn:hover {
+  color: #999;
+  background-color: #fff;
+  border: 3px solid #999;
+}

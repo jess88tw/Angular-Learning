@@ -1,0 +1,17 @@
+<div class="card" [class]="discount">
+  <div class="container">
+    <h4>
+      <strong>{{ title }}</strong>
+    </h4>
+    <p>{{ description }}</p>
+    <button
+      type="button"
+      [disabled]="soldout"
+      class="btn"
+      [class]="discount"
+      (click)="book(title)"
+    >
+      Buy!
+    </button>
+  </div>
+</div>
