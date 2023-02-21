@@ -12,13 +12,13 @@ class Dog implements Animal {
   survive: boolean;
   weight: number;
   run(): void {
-      console.log(this.name + '.run')
+    console.log(this.name + '.run');
   }
 
   constructor(name: string, survive: boolean, weight: number) {
-      this.name = name;
-      this.survive = survive;
-      this.weight = weight;
+    this.name = name;
+    this.survive = survive;
+    this.weight = weight;
   }
 }
 
@@ -27,13 +27,13 @@ class Fish implements Animal {
   survive: boolean;
   weight: number;
   swim(): void {
-      console.log(this.name + '.swim')
+    console.log(this.name + '.swim');
   }
 
   constructor(name: string, survive: boolean, weight: number) {
-      this.name = name;
-      this.survive = survive;
-      this.weight = weight;
+    this.name = name;
+    this.survive = survive;
+    this.weight = weight;
   }
 }
 
@@ -44,15 +44,14 @@ let fishA = new Fish('Jack', false, 10);
 // fishA.swim();
 
 // ts array example
-const numArray1: number[] = [1,2,3,4,5];
-const numArray2: Array<number> = [1,2,3,4,5];
-const numArray3: Array<number|string> = [1,2,3,'a',5];
-const numArray4: Array<any> = [1,2,3,'a',5];
-
+const numArray1: number[] = [1, 2, 3, 4, 5];
+const numArray2: Array<number> = [1, 2, 3, 4, 5];
+const numArray3: Array<number | string> = [1, 2, 3, 'a', 5];
+const numArray4: Array<any> = [1, 2, 3, 'a', 5];
 // console.log(numArray4);
 
 // ts function example
-function sum(x:number, y:number): number {
+function sum(x: number, y: number): number {
   return x + y;
 }
 
@@ -61,7 +60,7 @@ function sum(x:number, y:number): number {
 // ts loop example
 let total = 0;
 
-numArray1.forEach(x => {
+numArray1.forEach((x) => {
   total = sum(total, x);
 });
 

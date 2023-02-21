@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class BoardComponent implements OnInit {
   constructor() {}
 
-  title1 = 'Cack';
+  title1 = 'Crack';
   title2 = 'Cookie';
   title3 = 'Bread';
-
+  itemList: Array<string> = [];
+  today = new Date();
   ngOnInit(): void {}
+  addItem(title: string): void {
+    this.itemList.push(title);
+  }
 }

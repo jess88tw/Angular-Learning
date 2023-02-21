@@ -4,7 +4,7 @@
   font-family: sans-serif;
 }
 
-.card {
+.product-card {
   border-radius: 9px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   display: flex;
@@ -13,15 +13,15 @@
   transition: all 0.3s;
 }
 
-.card.discount {
+.product-card.discount {
   background-color: #fbe5e6;
 }
 
-.card.no-discount {
+.product-card.no-discount {
   background-color: #fcede0;
 }
 
-.card:hover {
+.product-card:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -32,6 +32,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+  color: #333;
 }
 
 h4 {
@@ -42,7 +43,14 @@ p {
   font-size: 18px;
 }
 
-.btn {
+.product-num {
+  width: 50%;
+  font-size: 18px;
+  background-color: #fff;
+  border: none;
+}
+
+.product-btn {
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
@@ -51,18 +59,27 @@ p {
   transition: all 0.3s;
 }
 
-.btn.discount {
+.product-btn.discount {
   background-color: #e0494d;
   border: 3px solid #e0494d;
 }
 
-.btn.no-discount {
+.product-btn.no-discount {
   background-color: #e67e22;
   border: 3px solid #e67e22;
 }
 
-.btn:hover {
+.product-btn:hover {
   color: #999;
   background-color: #fff;
   border: 3px solid #999;
 }
+
+/* @keyframes flashing {
+  from {
+    background-color: blueviolet;
+  }
+  to {
+    background-color: #e0494d;
+  }
+} */

@@ -1,17 +1,23 @@
-<div class="card" [class]="discount">
+<div class="product-card" [class]="discount">
   <div class="container">
     <h4>
       <strong>{{ title }}</strong>
     </h4>
+    <!-- <ng-content select="table"></ng-content> -->
     <p>{{ description }}</p>
+    <p>售價: {{ price | currency : "NTD" : "symbol" : "0.0-0" }}</p>
+    <!-- <ng-content select="img"></ng-content> -->
+    <input class="product-num" type="number" [(ngModel)]="count" />
     <button
-      type="button"
-      [disabled]="soldout"
-      class="btn"
+      appFlashing
+      speed="0.1s"
+      class="product-btn"
       [class]="discount"
       (click)="book(title)"
+      type="button"
+      [disabled]="soldout"
     >
-      Buy!
+      Add {{ count }} to cart!
     </button>
   </div>
 </div>

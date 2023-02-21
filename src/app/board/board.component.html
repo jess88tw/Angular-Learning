@@ -1,5 +1,31 @@
 <div class="section-card">
-  <app-card [title]="title1"></app-card>
-  <app-card [title]="title2"></app-card>
-  <app-card [title]="title3"></app-card>
+  <app-card [title]="title1" (bookEvent)="addItem($event)"></app-card>
+  <app-card [title]="title2" (bookEvent)="addItem($event)"></app-card>
+  <app-card [title]="title3" (bookEvent)="addItem($event)"></app-card>
+</div>
+<div class="section-card">
+  <!-- 水果類 -->
+  <app-card title="芒果" price="1000" (bookEvent)="addItem($event)">
+    <img src="assets/img/mango.webp" alt="A picture of mangoooooo" />
+  </app-card>
+  <!-- 甜點類 -->
+  <app-card title="麵包" price="10000" (bookEvent)="addItem($event)">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">成分表</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>熱量</td>
+          <td>298</td>
+        </tr>
+      </tbody>
+    </table>
+  </app-card>
+</div>
+<div>
+  <p>目前訂購商品: {{ itemList.toString() }}</p>
+  <p>今天日期: {{ today | tomingo | date : "民國 yyy年 MM月 dd日" }}</p>
 </div>
