@@ -11,9 +11,12 @@ import { FlashingDirective } from './flashing.directive';
 import { ScrollDirective } from './scroll.directive';
 import { CopyDirective } from './copy.directive';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { MenuComponent } from './menu/menu.component';
+import { Page1Component } from './page1/page1.component';
+import { Page2Component } from './page2/page2.component';
 
 @NgModule({
-  declarations: [AppComponent, BoardComponent, CardComponent, TomingoPipe, FlashingDirective, ScrollDirective, CopyDirective, CheckoutComponent],
+  declarations: [AppComponent, BoardComponent, CardComponent, TomingoPipe, FlashingDirective, ScrollDirective, CopyDirective, CheckoutComponent, MenuComponent, Page1Component, Page2Component],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
