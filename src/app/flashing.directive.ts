@@ -1,29 +1,22 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
+// Renderer2 可以更改元素的樣式, 添加刪除元素, 設置屬性, 處理事件等
 @Directive({
   selector: '[appFlashing]',
 })
 export class FlashingDirective {
-  constructor(private el: ElementRef) {}
-  @Input() speed = '0.1s';
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
   @HostListener('mouseenter') onMouseEnter() {
     // this.el.nativeElement.style.backgroundColor = '#fff';
     // this.el.nativeElement.style.color = '#999';
     // this.el.nativeElement.style.border = '3px solid #999';
-    this.el.nativeElement.style.animationName = 'flashing';
-    this.el.nativeElement.style.animationDuration = this.speed;
-    this.el.nativeElement.style.animationIterationCount = 'infinite';
-    this.el.nativeElement.style.animationDelay = '5s';
-    console.log(this.el.nativeElement.style);
+    this.renderer.addClass(this.el.nativeElement, 'flashing');
   }
 
   @HostListener('mouseleave') mouseleave() {
     // this.el.nativeElement.style.backgroundColor = '';
     // this.el.nativeElement.style.color = '';
     // this.el.nativeElement.style.border = '';
-    this.el.nativeElement.style.animationName = '';
-    this.el.nativeElement.style.animationDuration = '';
-    this.el.nativeElement.style.animationIterationCount = '';
-    this.el.nativeElement.style.animationDelay = '';
+    this.renderer.removeClass(this.el.nativeElement, 'flashing');
   }
 }

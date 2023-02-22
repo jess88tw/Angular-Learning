@@ -9,13 +9,12 @@
     <!-- <ng-content select="img"></ng-content> -->
     <input class="product-num" type="number" [(ngModel)]="count" />
     <button
-      appFlashing
-      speed="0.1s"
       class="product-btn"
       [class]="discount"
       (click)="book(title)"
       type="button"
       [disabled]="soldout"
+      appFlashing
     >
       Add {{ count }} to cart!
     </button>

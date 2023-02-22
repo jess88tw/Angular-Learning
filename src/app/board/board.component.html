@@ -1,16 +1,37 @@
-<div class="section-card">
-  <app-card [title]="title1" (bookEvent)="addItem($event)"></app-card>
-  <app-card [title]="title2" (bookEvent)="addItem($event)"></app-card>
-  <app-card [title]="title3" (bookEvent)="addItem($event)"></app-card>
+<!-- desert -->
+<div class="section-card" *ngIf="showRow1">
+  <app-card
+    [title]="title1"
+    price="10"
+    (bookEvent)="addItem($event)"
+    appScroll
+  ></app-card>
+  <app-card
+    [title]="title2"
+    price="166"
+    (bookEvent)="addItem($event)"
+    appScroll
+  ></app-card>
+  <app-card
+    [title]="title3"
+    price="6969"
+    (bookEvent)="addItem($event)"
+    appScroll
+  ></app-card>
 </div>
-<div class="section-card">
-  <!-- 水果類 -->
-  <app-card title="芒果" price="1000" (bookEvent)="addItem($event)">
-    <img src="assets/img/mango.webp" alt="A picture of mangoooooo" />
+
+<!-- fruit -->
+<div class="section-card" *ngIf="showRow2">
+  <app-card title="Mango" price="1000" (bookEvent)="addItem($event)" appScroll>
+    <!-- <img src="assets/img/mango.webp" alt="A picture of mangoooooo" /> -->
   </app-card>
-  <!-- 甜點類 -->
-  <app-card title="麵包" price="10000" (bookEvent)="addItem($event)">
-    <table>
+  <app-card
+    title="Golden Mango"
+    price="10000"
+    (bookEvent)="addItem($event)"
+    appScroll
+  >
+    <!-- <table>
       <thead>
         <tr>
           <th colspan="2">成分表</th>
@@ -22,10 +43,44 @@
           <td>298</td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
   </app-card>
 </div>
+
+<!-- wepon -->
+<div class="section-card" *ngIf="showRow3">
+  <app-card
+    *ngFor="let t of titleList"
+    [title]="t"
+    (bookEvent)="addItem($event)"
+    appScroll
+  ></app-card>
+</div>
+<div class="hidden-btn">
+  <button class="btn" type="button" (click)="showRow1 = !showRow1">
+    Hide the row1
+  </button>
+  <button class="btn" type="button" (click)="showRow2 = !showRow2">
+    Hide the row2
+  </button>
+  <button class="btn" type="button" (click)="showRow3 = !showRow3">
+    Hide the row3
+  </button>
+</div>
+
+<div>
+  <img #image src="assets/img/mango.webp" />
+  <!-- <img src="assets/img/mango.webp" *appCopy="10" /> -->
+  <ng-template #mangotemplate>
+    <p>Buy the Mangooooo or your man go</p>
+  </ng-template>
+  <ng-container #container> </ng-container>
+</div>
+
 <div>
   <p>目前訂購商品: {{ itemList.toString() }}</p>
   <p>今天日期: {{ today | tomingo | date : "民國 yyy年 MM月 dd日" }}</p>
 </div>
+
+<button (click)="checkout()">結帳</button>
+<ng-container #anchor></ng-container>
