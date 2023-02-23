@@ -9,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
   constructor(private router: Router) {}
 
+  itemName = '';
   ngOnInit(): void {}
-  toPage1(): void {
-    this.router.navigate(['/page1']);
+  toPage1(itemName: string): void {
+    this.router.navigate(['/page1', { name: itemName, count: 1 }]);
   }
 }
